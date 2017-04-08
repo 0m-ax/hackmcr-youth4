@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install build-essential cmake pkg-config libjpeg8-dev libtiff4-dev libjasper-dev libpng12-dev libgtk2.0-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libatlas-base-dev gfortran python-pip python-imaging python2.7-dev git -y
+sudo apt-get install build-essential cmake pkg-config libjpeg8-dev libjasper-dev libpng12-dev libgtk2.0-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libatlas-base-dev gfortran python-pip python-imaging python2.7-dev git -y
 git clone https://github.com/Itseez/opencv.git
 cd opencv
 git checkout 3.0.0
