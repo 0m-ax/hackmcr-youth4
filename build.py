@@ -18,6 +18,7 @@ images = []
 labels = []
 imageFiles = []
 for person in os.listdir('photos'):
+    print person
     for image in [f for f in os.listdir('photos/'+person) if re.match(r'[0-9]+.*\.jpg', f)][1:]:
         print image
         imageFiles.append({
@@ -39,7 +40,7 @@ cv2.destroyAllWindows()
 # Perform the tranining
 recognizer.train(images, np.array(labels))
 recognizer.save("mod")
-predict_image_pil = Image.open(base+"/5/2.jpg").convert('L')
+predict_image_pil = Image.open(base+"/4/1.jpg").convert('L')
 predict_image = np.array(predict_image_pil, 'uint8')
 faces = faceCascade.detectMultiScale(predict_image, 1.3, 5, minSize=(80, 80))
 print "{} faces".format(len(faces))
@@ -48,6 +49,6 @@ for (x, y, w, h) in faces:
     print "Recognized as {}".format(nbr_predicted)
     print "{} confg".format(conf)
     cv2.imshow("Recognizing Face", predict_image[y: y + h, x: x + w])
-    cv2.waitKey(1000)
+    cv2.waitKey(100)
 input()
 cv2.destroyAllWindows()
