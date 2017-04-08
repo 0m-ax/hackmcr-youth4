@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # import the necessary packages
 from picamera.array import PiRGBArray
 from picamera import PiCamera
@@ -22,4 +23,3 @@ while True:
     for (x, y, w, h) in faces:
         predicted, conf = recognizer.predict(predict_image[y: y + h, x: x + w])
         print "face {} guessed with confidence {}".format(predicted,conf)
-
