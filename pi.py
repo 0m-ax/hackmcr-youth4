@@ -8,7 +8,7 @@ import numpy as np
 cascadePath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 # For face recognition we will the the LBPH Face Recognizer 
-recognizer = cv2.face.createLBPHFaceRecognizer()
+recognizer = cv2.createLBPHFaceRecognizer()
 recognizer.load('mod')
 # initialize the camera and grab a reference to the raw camera capture
 camera = PiCamera()
