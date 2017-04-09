@@ -35,6 +35,8 @@ for imageFile in imageFiles:
     for (x, y, w, h) in faces:
         images.append(image[y: y + h, x: x + w])
         labels.append(imageFile['name'])
+        cv2.imshow("Recognizing Face", image[y: y + h, x: x + w])
+        cv2.waitKey(100)
 cv2.destroyAllWindows()
 
 # Perform the tranining
