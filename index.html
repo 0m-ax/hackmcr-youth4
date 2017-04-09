@@ -7,7 +7,7 @@
             socket.on('faces-info',(faces)=>{
                 console.log(faces)
                 $('.names').text(faces.map((face)=>face.name).join(' '))
-                $(".update-show").fadeOut(100).fadeIn(100)
+                $(".update-show").fadeOut(50).fadeIn(50)
             });
         </script>
         <style>
