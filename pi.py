@@ -20,7 +20,7 @@ with SocketIO('localhost', 8080, LoggingNamespace) as socketIO:
         rawCapture = PiRGBArray(camera)
         camera.capture(rawCapture, format="bgr")
         image = rawCapture.array
-        #bwimage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        bwimage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         faces = faceCascade.detectMultiScale(bwimage, 1.3, 5, minSize=(80, 80))
         output = []
         print "{} faces".format(len(faces))
