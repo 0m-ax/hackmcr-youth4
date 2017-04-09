@@ -22,7 +22,7 @@ with SocketIO('localhost', 8080, LoggingNamespace) as socketIO:
         cv2.imshow("Image", image)
         cv2.waitKey(0)
         bwimage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        faces = faceCascade.detectMultiScale(bwimage, 1.3, 5, minSize=(80, 80))
+        faces = faceCascade.face.detectMultiScale(bwimage, 1.3, 5, minSize=(80, 80))
         output = []
         for (x, y, w, h) in faces:
             predicted, conf = recognizer.predict(predict_image[y: y + h, x: x + w])
