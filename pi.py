@@ -25,7 +25,7 @@ with SocketIO('localhost', 8080, LoggingNamespace) as socketIO:
         output = []
         print "{} faces".format(len(faces))
         for (x, y, w, h) in faces:
-            predicted, conf = recognizer.predict(predict_image[y: y + h, x: x + w])
+            predicted, conf = recognizer.predict(bwimage[y: y + h, x: x + w])
             print "face {} guessed with confidence {}".format(predicted,conf)
             output.append({"id":predict,"conf":conf})
         
