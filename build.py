@@ -19,7 +19,7 @@ labels = []
 imageFiles = []
 for person in os.listdir('photos'):
     print person
-    for image in [f for f in os.listdir('photos/'+person) if re.match(r'[0-9]+.*\.jpg', f)][1:]:
+    for image in [f for f in os.listdir('photos/'+person) if re.match(r'[0-9]+.*\.jpg', f)]:
         print image
         imageFiles.append({
             "name":int(person),
