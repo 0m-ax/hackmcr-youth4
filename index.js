@@ -12,7 +12,7 @@ io.on('connection', function (socket) {
     socket.on('faces',(faces)=>{
         console.log(faces)
         var info = faces
-            .filter((face)=>face.conf < 10)
+            .filter((face)=>face.conf < 100)
             .map((match)=>require('./photos/'+match.id+'/about.json'))
             console.log(info)
         socket.broadcast.emit('faces-info',info)
