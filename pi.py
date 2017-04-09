@@ -8,7 +8,7 @@ import numpy as np
 cascadePath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 # For face recognition we will the the LBPH Face Recognizer 
-recognizer = cv2.createLBPHFaceRecognizer()
+recognizer = cv2.face.createLBPHFaceRecognizer()
 recognizer.load('mod')
 # initialize the camera and grab a reference to the raw camera capture
 camera = PiCamera()
@@ -22,7 +22,7 @@ with SocketIO('localhost', 8080, LoggingNamespace) as socketIO:
         cv2.imshow("Image", image)
         cv2.waitKey(0)
         bwimage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        faces = faceCascade.face.detectMultiScale(bwimage, 1.3, 5, minSize=(80, 80))
+        faces = faceCascade.detectMultiScale(bwimage, 1.3, 5, minSize=(80, 80))
         output = []
         for (x, y, w, h) in faces:
             predicted, conf = recognizer.predict(predict_image[y: y + h, x: x + w])
