@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /home/pi/hackmcr2017-4
-node index&
-python pi.py&
+cd /home/pi/woo
+screen -d -m node index
+screen -d -m python pi.py
