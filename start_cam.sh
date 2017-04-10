@@ -1,0 +1,1 @@
+python pi.py > /tmp/camlog.txt

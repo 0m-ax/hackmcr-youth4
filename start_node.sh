@@ -1,0 +1,1 @@
+node index  > /tmp/nodelog.txt
